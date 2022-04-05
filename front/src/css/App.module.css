@@ -1,0 +1,23 @@
+.navbar {
+  background-color: #222;
+  color: #ffff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.navbar h1 {
+  font-size: 18px;
+}
+
+.navbar div {
+  font-size: 18px;
+}
+
+.navbar div img {
+  height: 18px;
+  margin-right: 10px;
+}
