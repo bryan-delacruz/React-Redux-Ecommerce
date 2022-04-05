@@ -1,8 +1,8 @@
-import { GET_PRODUCTS, GET_PRODUCT_BY_ID } from "./action";
+import { ADD_PRODUCT, GET_PRODUCTS, GET_PRODUCT_BY_ID } from "./action";
 const initialState = {
   products: [],
   productById: {},
-  cart: [{ id: 1, cantidad: 2 },{ id: 2, cantidad: 3 }],
+  cart: [],
 };
 
 const rootReducer = (state = initialState, { type, payload }) => {
@@ -18,6 +18,24 @@ const rootReducer = (state = initialState, { type, payload }) => {
         ...state,
         productById: payload,
       };
+    }
+    case ADD_PRODUCT: {
+      if (state.cart.length > 0 && state.cart?.find((e) => e.id === payload)) {
+        return {
+          ...state,
+          cart: state.cart.map((e) => {
+            if (e.id === payload) {
+              e.cantidad++;
+            }
+            return e;
+          }),
+        };
+      } else {
+        return {
+          ...state,
+          cart: [...state.cart, { id: payload, cantidad: 1 }],
+        };
+      }
     }
     default:
       return state;
