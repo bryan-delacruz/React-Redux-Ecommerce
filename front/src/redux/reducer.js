@@ -92,12 +92,6 @@ const rootReducer = (state = initialState, { type, payload }) => {
         };
       }
     }
-    case GET_PRODUCTS: {
-      return {
-        ...state,
-        cart: payload,
-      };
-    }
     default:
       return state;
   }

@@ -7,7 +7,7 @@ import DisplayPage from "./pages/DisplayPage";
 import CartPage from "./pages/CartPage";
 import ListPage from "./pages/ListPage";
 
-import { getProducts, setCartLocalStorage } from "./redux/action";
+import { getProducts } from "./redux/action";
 
 import stl from "./css/App.module.css";
 import cart_img from "./assets/shopping-cart.png";
