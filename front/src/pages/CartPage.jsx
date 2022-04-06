@@ -13,7 +13,7 @@ const CartPage = () => {
           return <Item key={item.id} id={item.id} cantidad={item.cantidad} />;
         })
       ) : (
-        <div>No hay ningun producto agregado al carrito</div>
+        <div>There aren't product added yet</div>
       )}
     </div>
   );

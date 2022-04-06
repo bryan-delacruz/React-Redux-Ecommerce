@@ -1,11 +1,17 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import stl from "../css/Card.module.css";
 import { addProduct } from "../redux/action";
 
 const Card = ({ id, name, image, rating, numReviews, price, countInStock }) => {
   const dispatch = useDispatch();
+  let navigate = useNavigate();
+
+  const seeMore = () => {
+    navigate(`/${id}`);
+  };
 
   const agregar = () => {
     dispatch(addProduct(id));
@@ -39,7 +45,9 @@ const Card = ({ id, name, image, rating, numReviews, price, countInStock }) => {
         </div>
       </div>
       <div>
-        <button className={stl.btn_info}>See more</button>
+        <button className={stl.btn_info} onClick={() => seeMore()}>
+          See more
+        </button>
         <button
           className={countInStock > 0 ? stl.btn_add : stl.btn_disable}
           onClick={() => agregar()}
