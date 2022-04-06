@@ -76,6 +76,9 @@ const rootReducer = (state = initialState, { type, payload }) => {
       };
     }
     case ADD_TO_CART: {
+      let stockProducto = state.products?.find(
+        (e) => e._id === payload.id
+      ).countInStock;
       if (
         state.cart.length > 0 &&
         state.cart?.find((e) => e.id === payload.id)
@@ -83,7 +86,10 @@ const rootReducer = (state = initialState, { type, payload }) => {
         return {
           ...state,
           cart: state.cart.map((e) => {
-            if (e.id === payload.id) {
+            if (
+              e.id === payload.id &&
+              e.cantidad + payload.cantidad <= stockProducto
+            ) {
               e.cantidad = e.cantidad + payload.cantidad;
             }
             return e;

@@ -31,12 +31,13 @@
   margin-left: 10px;
 }
 .item .info .top p {
-  min-width: 230px;
+  width: 70%;
 }
 .item .info .top button {
   border: none;
   margin-right: 10px;
   background: none;
+  width: 10px;
 }
 
 .item .info .top button:hover,
