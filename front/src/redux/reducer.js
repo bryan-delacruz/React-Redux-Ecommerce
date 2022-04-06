@@ -30,11 +30,15 @@ const rootReducer = (state = initialState, { type, payload }) => {
       };
     }
     case ADD_PRODUCT: {
+      let stockProducto = state.products?.find(
+        (e) => e._id === payload
+      ).countInStock;
+
       if (state.cart.length > 0 && state.cart?.find((e) => e.id === payload)) {
         return {
           ...state,
           cart: state.cart.map((e) => {
-            if (e.id === payload) {
+            if (e.id === payload && e.cantidad < stockProducto) {
               e.cantidad++;
             }
             return e;
