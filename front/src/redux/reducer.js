@@ -6,10 +6,13 @@ import {
   GET_PRODUCTS,
   GET_PRODUCT_BY_ID,
 } from "./action";
+
+const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
+
 const initialState = {
   products: [],
   productById: {},
-  cart: [],
+  cart: cartFromLocalStorage,
 };
 
 const rootReducer = (state = initialState, { type, payload }) => {
@@ -69,12 +72,15 @@ const rootReducer = (state = initialState, { type, payload }) => {
       };
     }
     case ADD_TO_CART: {
-      if (state.cart.length > 0 && state.cart?.find((e) => e.id === payload.id)) {
+      if (
+        state.cart.length > 0 &&
+        state.cart?.find((e) => e.id === payload.id)
+      ) {
         return {
           ...state,
           cart: state.cart.map((e) => {
             if (e.id === payload.id) {
-              e.cantidad=e.cantidad+payload.cantidad;
+              e.cantidad = e.cantidad + payload.cantidad;
             }
             return e;
           }),
@@ -85,6 +91,12 @@ const rootReducer = (state = initialState, { type, payload }) => {
           cart: [...state.cart, payload],
         };
       }
+    }
+    case GET_PRODUCTS: {
+      return {
+        ...state,
+        cart: payload,
+      };
     }
     default:
       return state;

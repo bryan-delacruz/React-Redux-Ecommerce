@@ -5,6 +5,7 @@ export const ADD_PRODUCT = "ADD_PRODUCT";
 export const DECREASE_PRODUCT = "DECREASE_PRODUCT";
 export const DELETE_PRODUCT = "DELETE_PRODUCT";
 export const ADD_TO_CART = "ADD_TO_CART";
+export const SET_CART = "SET_CART";
 
 export const getProducts = () => async (dispatch) => {
   try {
@@ -38,4 +39,8 @@ export const deleteProduct = (id) => {
 
 export const addToCart = (id, cantidad) => {
   return { type: ADD_TO_CART, payload: { id, cantidad } };
+};
+
+export const setCartLocalStorage = (cart) => {
+  return { type: SET_CART, payload: cart };
 };

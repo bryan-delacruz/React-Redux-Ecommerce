@@ -7,8 +7,7 @@ import DisplayPage from "./pages/DisplayPage";
 import CartPage from "./pages/CartPage";
 import ListPage from "./pages/ListPage";
 
-
-import { getProducts } from "./redux/action";
+import { getProducts, setCartLocalStorage } from "./redux/action";
 
 import stl from "./css/App.module.css";
 import cart_img from "./assets/shopping-cart.png";
@@ -18,7 +17,8 @@ const App = () => {
   let cart = useSelector((state) => state.cart);
   useEffect(() => {
     dispatch(getProducts());
-  }, [dispatch]);
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [dispatch, cart]);
 
   return (
     <BrowserRouter>
