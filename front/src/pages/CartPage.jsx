@@ -1,9 +1,22 @@
-import React from 'react'
+import React from "react";
+import stl from "../css/CartPage.module.css";
+import { useSelector } from "react-redux";
+import Item from "../components/Item";
 
 const CartPage = () => {
-  return (
-    <div>CartPage</div>
-  )
-}
+  let cart = useSelector((state) => state.cart);
 
-export default CartPage
+  return (
+    <div className={stl.itemContainer}>
+      {cart.length > 0 ? (
+        cart.map((item) => {
+          return <Item key={item.id} id={item.id} cantidad={item.cantidad} />;
+        })
+      ) : (
+        <div>No hay ningun producto agregado al carrito</div>
+      )}
+    </div>
+  );
+};
+
+export default CartPage;

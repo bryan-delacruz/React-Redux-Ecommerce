@@ -39,13 +39,13 @@ const Card = ({ id, name, image, rating, numReviews, price, countInStock }) => {
         </div>
       </div>
       <div>
-        <button className={stl.btn_info}>Ver más</button>
+        <button className={stl.btn_info}>See more</button>
         <button
           className={countInStock > 0 ? stl.btn_add : stl.btn_disable}
           onClick={() => agregar()}
           disabled={countInStock > 0 ? false : true}
         >
-          {countInStock > 0 ? "Agregar" : "Sin Stoack"}
+          {countInStock > 0 ? "Add item to cart" : "Sin Stock"}
         </button>
       </div>
     </div>

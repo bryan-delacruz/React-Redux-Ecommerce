@@ -2,6 +2,8 @@ import axios from "axios";
 export const GET_PRODUCTS = "GET_PRODUCTS";
 export const GET_PRODUCT_BY_ID = "GET_PRODUCT_BY_ID";
 export const ADD_PRODUCT = "ADD_PRODUCT";
+export const DECREASE_PRODUCT = "DECREASE_PRODUCT";
+export const DELETE_PRODUCT = "DELETE_PRODUCT";
 
 export const getProducts = () => async (dispatch) => {
   try {
@@ -25,4 +27,11 @@ export const getProductbyId = (id) => async (dispatch) => {
 
 export const addProduct = (id) => {
   return { type: ADD_PRODUCT, payload: id };
+};
+
+export const decreaseProduct = (id) => {
+  return { type: DECREASE_PRODUCT, payload: id };
+};
+export const deleteProduct = (id) => {
+  return { type: DELETE_PRODUCT, payload: id };
 };
