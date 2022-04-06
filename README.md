@@ -1,6 +1,7 @@
 # Prueba tecnica Front Ecomsur 2021
 
-### Por favor, empezar la prueba después de haber leído este documento completo.
+`En cada uno de los subtítulos a partir de "Descripción de la prueba", se agregó contenido indicando como se realizó la prueba, que puntos fueron resueltos y las features que se añadieron`
+### Por favor, seguir los siguientes pasos.
 
   - [Requerimientos mínimos](#requerimientos-mínimos)
   - [Instalar y Correr la aplicación](#instalar-y-correr-la-aplicación)
@@ -54,8 +55,7 @@ Se requiere implementar un carrito de compras simple que traiga toda la info del
 - Un carrito de compras que tenga todos los ítems que serán comprados por el usuario. (Cart Page)
 - Espacio donde se muestre la sincronización de los ítems añadidos al carrito. (Mini cart) ![mini cart example](/minicart-example.png)
 
-`Favor de no utilizar "CSS frameworks" como Bootstrap, MUI, Semantic UI, etc. Parte importante de la prueba es ver tu uso de CSS. No es necesario que la prueba tenga un diseño muy complejo, estamos evaluando funcionalidad, no diseño ni uso de colores.`
-`Puedes instalar cualquier Libreria NPM que gustes para facilitar el desarrollo (Axios para llamadas al API, Modals, transiciones, etc..)`
+`Se completa cada uno de los puntos en 3 paginas distintas y un navbar para visualizar en todo momento los cantidad de items añadidos al carrito de compras`
 
 #### Las reglas del negocio son:
 
@@ -64,17 +64,28 @@ Se requiere implementar un carrito de compras simple que traiga toda la info del
 - Cada ítem en el carro debe tener un `action button` para remover el ítem del carro.
 - Los items en el carrito se deben de agrupar mostrando cantidad de cada producto añadido.
 
+`Se completa cada una de las reglas`
+
+`Se añade botones en el Display Page para que el usuario también pueda añadir productos al carrito de compras sin cambiar de página`
+
+`Se añade lógica en el Display Page para que no se pueda añadir al carrito una cantidad de items mayor al stock disponible del producto`
+
+`Se añade botones en el Cart Page para que se pueda eliminar y/o disminuir productos del carrito de compras`
+
 #### Puntos extras:
 
 - Mostrar el rating y número de reviews en el PLP y PDP
 - Usar Redux para mantener el estado global.
 - Mantener info de ítems en carrito al recargar la página
 
+`Se completa cada uno de los puntos extra`
 #### Notas
 
 - Recuerda la filosofía "Mobile-First Responsive Design".
 - Piensa en otras tiendas en linea que hayas usado. El publico final no es necesariamente alguien muy tecnico.
 - Si no utilizas el API local tu prueba será descartada.
+
+`Se realiza la prueba técnica siguiendo cada una de las recomendaciones`
 
 ## Reglas de entrega
 
@@ -84,5 +95,7 @@ Se requiere implementar un carrito de compras simple que traiga toda la info del
 
 3. Sube tu respuesta a un repositorio en una cuenta tuya de GitHub, GitLab o BitBucket y da acceso a `kbarcelo@ecomsur.com, ecervantes@ecomsur.com, olepage@ecomsur.com` y posiblemente a otros correos que te pida RRHH
 
-## ¡Mucho éxito! 💪
-# Front-End-Tech-Test
+`Se cumple con cada una de las reglas de entrega`
+
+## ¡Gracias por permitirme formar parte de su proceso de Selección! 💪
+# Bryan De La Cruz
