@@ -24,7 +24,7 @@ const Item = ({ id, cantidad }) => {
 
   return (
     <div className={stl.item}>
-      <img src={`http://localhost:5000${item.image}`} alt="" />
+      <img src={`http://localhost:5000${item.image}`} alt="img" />
       <div className={stl.info}>
         <div className={stl.top}>
           <p>
@@ -36,7 +36,7 @@ const Item = ({ id, cantidad }) => {
           </button>
         </div>
         <div className={stl.bot}>
-          <p>{`Precio: S/350`}</p>
+          <p>{`S/${item.price}`}</p>
           <div>
             <button className={stl.btn_minus} onClick={() => agregar()}>
               +

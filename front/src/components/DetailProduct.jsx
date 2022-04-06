@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getProductbyId } from "../redux/action";
+import { addToCart, getProductbyId } from "../redux/action";
 
 import stl from "../css/DetailProduct.module.css";
 
@@ -24,6 +24,10 @@ const DetailProduct = () => {
     }
   };
 
+  const agregarAlCarro = () => {
+    dispatch(addToCart(id,count));
+  };
+
   useEffect(() => {
     dispatch(getProductbyId(id));
   }, [dispatch, id]);
@@ -33,32 +37,43 @@ const DetailProduct = () => {
   } else {
     return (
       <div className={stl.detail}>
-        <img src="" alt="" />
-        <div>
-          <div>
+        <img src={`http://localhost:5000${product.image}`} alt="img" />
+        <div className={stl.container}>
+          <div className={stl.brand}>
             <div>{product.brand}</div>
             <div>{product.name}</div>
           </div>
-          <div>
-            <div>{product.rating}</div>
-            <div>{product.review}</div>
+          <div className={stl.rating}>
+            <div>Rating: {product.rating}</div>
+            <div>Reviews: {product.numReviews}</div>
           </div>
           <p>{product.description}</p>
-          <div>
-            <div>{product.price}</div>
-            <div>{product.countInStock}</div>
-            <div>
-              <button className={stl.btn_minus} onClick={() => aumentar()}>
-                +
-              </button>
-              <span>{count}</span>
-              <button className={stl.btn_plus} onClick={() => disminuir()}>
-                -
-              </button>
+          <div className={stl.container_bot}>
+            <div className={stl.price}>
+              <div>
+                {" "}
+                <b>Price: S/{product.price}</b>
+              </div>
             </div>
-            <div>
-              <button>Agregar</button>
+            <div className={stl.stock}>
+              <div className={stl.mb}>Stock: {product.countInStock}</div>
+              <div>
+                <button className={stl.btn_minus} onClick={() => aumentar()}>
+                  +
+                </button>
+                <span style={{ margin: "0px 5px" }}>{count}</span>
+                <button className={stl.btn_plus} onClick={() => disminuir()}>
+                  -
+                </button>
+              </div>
             </div>
+            <button
+              disabled={product.countInStock > 1 ? false : true}
+              className={product.countInStock > 1 ? "" : stl.btn_disable}
+              onClick={() => agregarAlCarro()}
+            >
+              Add
+            </button>
           </div>
         </div>
       </div>

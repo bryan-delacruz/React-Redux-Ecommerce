@@ -40,7 +40,7 @@ const Card = ({ id, name, image, rating, numReviews, price, countInStock }) => {
           <b>
             Price
             <br />
-            {price}
+            S/{price}
           </b>
         </div>
       </div>

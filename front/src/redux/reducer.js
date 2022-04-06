@@ -1,5 +1,6 @@
 import {
   ADD_PRODUCT,
+  ADD_TO_CART,
   DECREASE_PRODUCT,
   DELETE_PRODUCT,
   GET_PRODUCTS,
@@ -66,6 +67,24 @@ const rootReducer = (state = initialState, { type, payload }) => {
         ...state,
         cart: state.cart.filter((e) => e.id !== payload),
       };
+    }
+    case ADD_TO_CART: {
+      if (state.cart.length > 0 && state.cart?.find((e) => e.id === payload.id)) {
+        return {
+          ...state,
+          cart: state.cart.map((e) => {
+            if (e.id === payload.id) {
+              e.cantidad=e.cantidad+payload.cantidad;
+            }
+            return e;
+          }),
+        };
+      } else {
+        return {
+          ...state,
+          cart: [...state.cart, payload],
+        };
+      }
     }
     default:
       return state;

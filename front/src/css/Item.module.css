@@ -39,6 +39,11 @@
   background: none;
 }
 
+.item .info .top button:hover,
+.item .info .top button:active {
+  background: grey;
+}
+
 .item .info .bot {
   display: flex;
   flex-wrap: wrap;
@@ -63,4 +68,13 @@
   margin-left: 10px;
   background: black;
   color: #fff;
+}
+.item .info .bot .btn_minus:hover,
+.item .info .bot .btn_minus:active {
+  background: grey;
+}
+
+.item .info .bot .btn_plus:hover,
+.item .info .bot .btn_plus:active {
+  background: grey;
 }
