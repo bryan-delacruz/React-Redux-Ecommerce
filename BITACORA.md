@@ -31,7 +31,7 @@ Esto correrá ambas aplicaciones (Express y CRA) al mismo tiempo.
   `http://localhost:3000/`
  y se ve de la siguiente forma:
 
- ![Running app](/running-app.png)
+ ![Running app](/running-app-functional.png)
 
 
 - El servidor se encuentra en:
