@@ -9,8 +9,6 @@ const Item = ({ id, cantidad }) => {
 
   let products = useSelector((state) => state.products);
 
-  console.log(products);
-  console.log(id);
 
   let item = products?.find((e) => e._id === id);
 

@@ -34,7 +34,6 @@ const App = () => {
     });
   }
 
-  console.log(cantItems);
   return (
     <BrowserRouter>
       <div style={{ textAlign: "center" }}>
