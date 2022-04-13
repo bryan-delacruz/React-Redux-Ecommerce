@@ -9,6 +9,9 @@ const Item = ({ id, cantidad }) => {
 
   let products = useSelector((state) => state.products);
 
+  console.log(products);
+  console.log(id);
+
   let item = products?.find((e) => e._id === id);
 
   const agregar = () => {
@@ -22,7 +25,9 @@ const Item = ({ id, cantidad }) => {
     dispatch(deleteProduct(id));
   };
 
-  return (
+  return !item ? (
+    <div>cargando...</div>
+  ) : (
     <div className={stl.item}>
       <img src={`http://localhost:5000${item.image}`} alt="img" />
       <div className={stl.info}>
