@@ -20,6 +20,21 @@ const App = () => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [dispatch, cart]);
 
+  // let cantItems =
+  //   cart.length >= 1
+  //     ? cart.reduce((p, c) => {
+  //         return p + c.cantidad;
+  //       }, 0)
+  //     : 0;
+
+  let cantItems = 0;
+  if (cart.length >= 1) {
+    cart.forEach((element) => {
+      cantItems = cantItems + element.cantidad;
+    });
+  }
+
+  console.log(cantItems);
   return (
     <BrowserRouter>
       <div style={{ textAlign: "center" }}>
@@ -30,11 +45,7 @@ const App = () => {
           <Link to={`/cart`} style={{ textDecoration: "none", color: "#fff" }}>
             <div>
               <img src={cart_img} alt="car-img" />
-              <span>
-                {cart.reduce((p, c) => {
-                  return p + c.cantidad;
-                }, 0)}
-              </span>
+              <span>{cantItems}</span>
             </div>
           </Link>
         </nav>
