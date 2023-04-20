@@ -1,0 +1,80 @@
+.detail {
+  border: 1px solid #696666;
+  border-radius: 5px;
+  margin: auto;
+  background-color: rgb(246, 252, 255);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 10px;
+  width: 300px;
+  font-size: 12px;
+}
+
+.detail img {
+  width: 100%;
+}
+
+.detail button {
+  border: none;
+  background: black;
+  color: #fff;
+  cursor: pointer;
+}
+
+.detail button:hover,
+.detail button:active {
+  background-color: grey;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: left;
+  width: 100%;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 30px;
+}
+
+.brand {
+  font-weight: bold;
+  width: 220px;
+  margin-bottom: 10px;
+}
+.rating {
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.container_bot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.stock {
+  text-align: right;
+}
+
+.mb {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.detail .btn_disable {
+  background: grey;
+  padding: 5px 0;
+  color: #fff;
+  cursor: default;
+}
+
+.detail .btn_disable :hover,
+.detail .btn_disable :active {
+  background-color: grey;
+}

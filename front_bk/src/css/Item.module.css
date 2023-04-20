@@ -1,0 +1,81 @@
+.item {
+  border: 1px solid #696666;
+  border-radius: 5px;
+  margin: auto;
+  background-color: rgb(246, 252, 255);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  max-width: 800px;
+  max-height: 150px;
+  font-size: 12px;
+}
+
+.item img {
+  max-width: 30%;
+  max-height: 100px;
+  margin: auto;
+}
+
+.item .info {
+  width: 70%;
+  font-weight: bold;
+}
+
+.item .info .top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: left;
+  margin-left: 10px;
+}
+.item .info .top p {
+  width: 70%;
+}
+.item .info .top button {
+  border: none;
+  margin-right: 10px;
+  background: none;
+  width: 10px;
+}
+
+.item .info .top button:hover,
+.item .info .top button:active {
+  background: grey;
+}
+
+.item .info .bot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+
+.item .info div {
+  align-items: center;
+}
+
+.item .info .bot .btn_minus {
+  border: none;
+  margin-right: 10px;
+  background: black;
+  color: #fff;
+}
+
+.item .info .bot .btn_plus {
+  border: none;
+  margin-right: 10px;
+  margin-left: 10px;
+  background: black;
+  color: #fff;
+}
+.item .info .bot .btn_minus:hover,
+.item .info .bot .btn_minus:active {
+  background: grey;
+}
+
+.item .info .bot .btn_plus:hover,
+.item .info .bot .btn_plus:active {
+  background: grey;
+}
